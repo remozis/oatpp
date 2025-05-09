@@ -31,6 +31,7 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <string.h>
+#include <thread>
 
 #if defined(WIN32) || defined(_WIN32)
   #include <io.h>
