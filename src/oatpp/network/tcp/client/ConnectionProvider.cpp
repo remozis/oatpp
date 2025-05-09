@@ -347,7 +347,7 @@ oatpp::async::CoroutineStarterForResult<const provider::ResourceHandle<data::str
             else 
             {
               // failure
-              OATPP_LOGI("ConnectionProvider","oatpp::async::CoroutineStarterForResult::doConnect(m_clientHandle=%d). so_error=%d. . connect failed", m_clientHandle, so_error); // Connection failed
+              OATPP_LOGi("ConnectionProvider","oatpp::async::CoroutineStarterForResult::doConnect(m_clientHandle=%d). so_error=%d. . connect failed", m_clientHandle, so_error); // Connection failed
 
               // If the server is not available, do not want to flood connection attempts, so add a small 1 second delay
               std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -358,7 +358,7 @@ oatpp::async::CoroutineStarterForResult<const provider::ResourceHandle<data::str
         } 
         else if (selectResult == 0) 
         {
-          OATPP_LOGI("ConnectionProvider","oatpp::async::CoroutineStarterForResult::doConnect(m_clientHandle=%d). ::select() failed. Timed out", m_clientHandle);
+          OATPP_LOGi("ConnectionProvider","oatpp::async::CoroutineStarterForResult::doConnect(m_clientHandle=%d). ::select() failed. Timed out", m_clientHandle);
           return yieldTo(&ConnectCoroutine::iterateAddrInfoResults);
         }
 
